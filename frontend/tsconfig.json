@@ -1,4 +1,10 @@
 {
+  "compilerOptions": {
+    // เปิด strict mode ตรวจชนิดข้อมูลเข้มข้นขึ้น
+    "strict": true,
+    // บังคับให้ใช้ตัวพิมพ์ใหญ่–เล็กให้ตรงกันข้าม OS
+    "forceConsistentCasingInFileNames": true
+  },
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
