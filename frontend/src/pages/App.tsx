@@ -1,9 +1,9 @@
 // frontend/src/pages/App.tsx
 import { useState } from "react";
 import UploadForm from "../components/UploadForm";
-import { SensorStats } from "../services/api/sensorService";
+import type { SensorStats } from "../services/api/sensorService"; // ใช้ import type
 import StatsDisplay from "../components/StatsDisplay";
-import SensorChart from "../components/SensorChart"; // Import SensorChart component
+import SensorChart from "../components/SensorChart";
 
 export default function App() {
   const [stats, setStats] = useState<SensorStats | null>(null);
@@ -13,7 +13,7 @@ export default function App() {
       <h1 className="text-2xl font-bold mb-4">Smart Sensor Data Insights</h1>
       <UploadForm onStats={setStats} />
       {stats && <StatsDisplay stats={stats} />}
-      {stats && <SensorChart />} {/* Add SensorChart component */}
+      {stats && <SensorChart />}
     </div>
   );
 }
