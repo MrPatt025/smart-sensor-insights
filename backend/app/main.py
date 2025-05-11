@@ -1,8 +1,17 @@
 # backend/app/main.py
-from fastapi import FastAPI
+from fastapi import Depends, HTTPException
+from sqlalchemy.orm import Session
+from .core.database import engine, get_db
+from .models.base import Base
 
-app = FastAPI()
+# สร้างตารางเมื่อเริ่มระบบ
+Base.metadata.create_all(bind=engine)
 
-@app.get("/")
-async def root():
-    return {"message": "Smart Sensor Data Insights API"}
+@app.get("/health")
+async def health_check():
+    return {"status": "ok"}
+
+# placeholder for sensor router
+@app.get("/sensors")
+async def read_sensors(db: Session = Depends(get_db)):
+    return {"message": "List sensors will be here"}
