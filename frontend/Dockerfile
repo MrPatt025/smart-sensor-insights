@@ -1,5 +1,5 @@
 # 1. ใช้ Node.js 18 เป็น base
-FROM node:18
+FROM node:20-alpine3.20
 
 # 2. ตั้ง working directory เป็น /app
 WORKDIR /app
