@@ -1,5 +1,5 @@
 // frontend/src/components/StatsDisplay.tsx
-import { SensorStats } from "../services/api/sensorService";
+import type { SensorStats } from "../services/api/sensorService";
 
 export default function StatsDisplay({ stats }: { stats: SensorStats }) {
   return (
