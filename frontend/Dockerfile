@@ -1,5 +1,5 @@
-# 1. ใช้ Node.js 18 เป็น base
-FROM node:20-alpine3.20
+# 1. ใช้ Node.js เป็น base
+FROM node:lts-bookworm-slim
 
 # 2. ตั้ง working directory เป็น /app
 WORKDIR /app
