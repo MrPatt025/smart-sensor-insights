@@ -36,3 +36,19 @@ jobs:
           cd frontend
           pnpm install
           pnpm run build
+          
+      # เพิ่มขั้นตอนสำหรับ Frontend Unit Tests
+      - name: Run Frontend Unit Tests
+        run: |
+          cd frontend
+          npm install
+          npm run test -- --coverage
+
+      # เพิ่มขั้นตอนสำหรับ Cypress Tests
+      - name: Run Cypress Tests
+        uses: cypress-io/github-action@v4
+        with:
+          start: npm start
+          wait-on: 'http://localhost:3000'
+          wait-on-timeout: 60
+          browser: chrome
